@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block content%}
+    {%if form.errors%}
+   
+    <p>Kullanıcı adın veya Parolan yanlış Lütfen tekrar dene.</p>
+    {%endif%}
+    
+    {% if user.is_authenticated%}
+        <h2 style="padding: 150px;">HOŞGELDİN {{user.username}}</h2>
+    {%else%}
+        <form method="POST" action="{%url 'login' %}">
+                {%csrf_token%}
+            {{form}}
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    {%endif%}
+{%endblock%}

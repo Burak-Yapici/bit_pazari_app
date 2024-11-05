@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1 class="text-center">Ürünlerinizi Yükleyip Satış Yaparak Ek Gelir Elde Etmek İçin Doğru Yerdesiniz</h1>
+<div class="container productform">  
+  
+  <form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <!-- Ürün adı alanı -->
+    <div class="mb-3">
+      <label for="productname" class="form-label text-center d-block">Ürün Adı</label>
+      <div class="text-center">
+        {{ form.productname }}
+      </div>
+    </div>
+
+    <!-- Ürün bilgisi alanı -->
+    <div class="mb-3">
+      <label for="productinfo" class="form-label text-center d-block">Ürün Bilgisi</label>
+      <div class="text-center">
+        {{ form.productinfo }}  <!-- Textarea olarak otomatik görüntülenir -->
+      </div>
+    </div>
+
+    <!-- Ürün fotoğrafı alanı -->
+    <div class="mb-3">
+      <label for="image" class="form-label text-center d-block">Ürün Fotoğrafı</label>
+      <div class="text-center">
+        {{ form.image }}
+      </div>
+    </div>
+    
+    <!-- Gönder butonu -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Ürünü Yükle</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

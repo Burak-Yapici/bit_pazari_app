@@ -1,0 +1,21 @@
+.productform{
+    border: 8px solid rgb(242, 118, 47);
+    width:500px ; 
+    height:600px;
+    
+}
+
+.card {
+    transition: transform 0.2s; /* Hover efekti için geçiş süresi */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Hover edildiğinde kartı büyüt */
+}
+
+.card-img-top {
+    height: 200px; /* Resim yüksekliği */
+    width: auto; /* Genişliği otomatik ayarla */
+    object-fit: cover; /* Resmin kesilmesini önle */
+}
+
